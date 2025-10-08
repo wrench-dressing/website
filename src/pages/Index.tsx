@@ -64,17 +64,17 @@ const Index = () => {
       <SponsorScroll />
 
       {/* About Section */}
-      <section className="py-24 px-6 bg-card relative">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blueprint to-transparent"></div>
+      <section id="about" className="py-24 px-6 bg-card relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-team-blue to-transparent"></div>
         
         <div className="container mx-auto max-w-6xl">
-          <TechnicalHeader label="SECTION 01" title="The Blueprint" />
+          <TechnicalHeader label="SECTION 01" title="About Us" />
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-foreground leading-relaxed">
-                Welcome to the <span className="font-mono text-blueprint font-bold">Wrench Dressing Diner</span>, 
-                where innovation is always on the menu. We're FTC Team 9415, serving up engineering excellence 
+                Welcome to the <span className="font-mono text-team-blue font-bold">Wrench Dressing Diner</span>, 
+                where innovation is always on the menu. We're FTC Team 9415, serving up engineering solutions 
                 one competition at a time.
               </p>
               <p className="text-lg text-foreground leading-relaxed">
@@ -82,7 +82,7 @@ const Index = () => {
                 robots that compete at the highest levels of FIRST Tech Challenge.
               </p>
               <div className="flex items-center gap-3 pt-4">
-                <div className="h-12 w-1 bg-blueprint"></div>
+                <div className="h-12 w-1 bg-team-yellow"></div>
                 <p className="font-mono text-sm text-technical-gray">
                   "Precision-engineered solutions, served fresh daily"
                 </p>
@@ -91,15 +91,15 @@ const Index = () => {
 
             <div className="relative">
               <div className="absolute inset-0 blueprint-grid opacity-20"></div>
-              <Card className="p-8 border-2 border-blueprint relative">
-                <div className="absolute top-4 left-4 h-3 w-3 border-t-2 border-l-2 border-blueprint"></div>
-                <div className="absolute top-4 right-4 h-3 w-3 border-t-2 border-r-2 border-blueprint"></div>
-                <div className="absolute bottom-4 left-4 h-3 w-3 border-b-2 border-l-2 border-blueprint"></div>
-                <div className="absolute bottom-4 right-4 h-3 w-3 border-b-2 border-r-2 border-blueprint"></div>
+              <Card className="p-8 border-2 border-team-blue relative">
+                <div className="absolute top-4 left-4 h-3 w-3 border-t-2 border-l-2 border-team-blue"></div>
+                <div className="absolute top-4 right-4 h-3 w-3 border-t-2 border-r-2 border-team-blue"></div>
+                <div className="absolute bottom-4 left-4 h-3 w-3 border-b-2 border-l-2 border-team-blue"></div>
+                <div className="absolute bottom-4 right-4 h-3 w-3 border-b-2 border-r-2 border-team-blue"></div>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <Wrench className="h-8 w-8 text-blueprint flex-shrink-0 mt-1" />
+                    <Wrench className="h-8 w-8 text-team-blue flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-mono font-bold text-lg mb-2">Design & Build</h3>
                       <p className="text-muted-foreground">
@@ -109,7 +109,7 @@ const Index = () => {
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <Trophy className="h-8 w-8 text-blueprint flex-shrink-0 mt-1" />
+                    <Trophy className="h-8 w-8 text-team-yellow flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-mono font-bold text-lg mb-2">Compete</h3>
                       <p className="text-muted-foreground">
@@ -119,7 +119,7 @@ const Index = () => {
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <Users className="h-8 w-8 text-blueprint flex-shrink-0 mt-1" />
+                    <Users className="h-8 w-8 text-team-blue flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-mono font-bold text-lg mb-2">Collaborate</h3>
                       <p className="text-muted-foreground">
@@ -134,10 +134,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 px-6 bg-background blueprint-grid relative">
+      {/* Accomplishments Section */}
+      <section id="accomplishments" className="py-24 px-6 bg-background blueprint-grid relative">
         <div className="container mx-auto max-w-6xl">
-          <TechnicalHeader label="SECTION 02" title="By The Numbers" />
+          <TechnicalHeader label="SECTION 02" title="Accomplishments" />
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -148,12 +148,12 @@ const Index = () => {
             ].map((stat, index) => (
               <Card 
                 key={index} 
-                className="p-6 border-2 border-blueprint bg-card text-center hover:scale-105 transition-transform duration-300 cursor-pointer group"
+                className="p-6 border-2 border-team-blue bg-card text-center hover:scale-105 transition-transform duration-300 cursor-pointer group"
               >
                 <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">
                   {stat.symbol}
                 </div>
-                <div className="font-mono text-3xl font-bold text-blueprint mb-2">
+                <div className="font-mono text-3xl font-bold text-team-blue mb-2">
                   {stat.number}
                 </div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
@@ -165,6 +165,17 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Meeting Info */}
+      <MeetingCalendar />
+
+      {/* Competition Schedule */}
+      <CompetitionSchedule />
+
+      {/* Outreach */}
+      <OutreachCarousel />
+
+      {/* Sponsors */}
+      <SponsorsSection />
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t-2 border-team-blue bg-background">
