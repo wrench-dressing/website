@@ -1,28 +1,28 @@
-import { GearIcon } from "@/components/GearIcon";
+import { Navbar } from "@/components/Navbar";
+import { SponsorScroll } from "@/components/SponsorScroll";
+import { MeetingCalendar } from "@/components/MeetingCalendar";
+import { CompetitionSchedule } from "@/components/CompetitionSchedule";
+import { OutreachCarousel } from "@/components/OutreachCarousel";
+import { SponsorsSection } from "@/components/SponsorsSection";
 import { TechnicalHeader } from "@/components/TechnicalHeader";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Wrench, Trophy, Users, Mail, Github, Instagram } from "lucide-react";
+import { Wrench, Trophy, Users } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navbar />
+      
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden blueprint-grid">
-        {/* Animated Gears Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-          <GearIcon className="absolute top-10 right-20 text-blueprint animate-gear" size={120} />
-          <GearIcon className="absolute bottom-20 left-10 text-blueprint animate-gear-reverse" size={150} />
-          <GearIcon className="absolute top-1/2 left-1/3 text-blueprint-dark animate-gear" size={80} />
-        </div>
-
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden blueprint-grid pt-16">
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 text-center">
           <div className="space-y-8 max-w-4xl mx-auto">
             {/* Team Number Badge */}
-            <div className="inline-flex items-center gap-3 border-2 border-blueprint px-6 py-3 animate-fade-in-up">
-              <div className="h-2 w-2 bg-blueprint rounded-full animate-pulse"></div>
-              <span className="font-mono text-blueprint font-bold text-lg tracking-wider">
+            <div className="inline-flex items-center gap-3 border-2 border-team-blue px-6 py-3 animate-fade-in-up">
+              <div className="h-2 w-2 bg-team-yellow rounded-full animate-pulse"></div>
+              <span className="font-mono text-team-blue font-bold text-lg tracking-wider">
                 FTC TEAM 9415
               </span>
             </div>
@@ -35,20 +35,11 @@ const Index = () => {
               DRESSING
             </h1>
 
-            {/* Subtitle */}
-            <div className="flex items-center justify-center gap-4 animate-fade-in-up stagger-3">
-              <div className="h-px w-16 bg-blueprint"></div>
-              <p className="font-mono text-lg text-technical-gray uppercase tracking-widest">
-                The Diner of Engineering Excellence
-              </p>
-              <div className="h-px w-16 bg-blueprint"></div>
-            </div>
-
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 justify-center pt-8 animate-fade-in-up stagger-4">
               <Button 
                 size="lg" 
-                className="font-mono bg-blueprint hover:bg-blueprint-dark transition-all duration-300 hover:scale-105"
+                className="font-mono bg-team-blue hover:bg-team-blue-dark transition-all duration-300 hover:scale-105"
               >
                 <Wrench className="mr-2 h-5 w-5" />
                 View Our Work
@@ -56,7 +47,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="font-mono border-2 border-blueprint text-blueprint hover:bg-blueprint hover:text-white transition-all duration-300"
+                className="font-mono border-2 border-team-yellow text-team-yellow-dark hover:bg-team-yellow hover:text-white transition-all duration-300"
               >
                 <Users className="mr-2 h-5 w-5" />
                 Meet The Team
@@ -66,8 +57,11 @@ const Index = () => {
         </div>
 
         {/* Bottom Technical Line */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blueprint to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-team-blue to-transparent"></div>
       </section>
+
+      {/* Sponsor Logos Scroll */}
+      <SponsorScroll />
 
       {/* About Section */}
       <section className="py-24 px-6 bg-card relative">
@@ -171,56 +165,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-24 px-6 bg-card relative">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blueprint to-transparent"></div>
-        
-        <div className="container mx-auto max-w-4xl text-center">
-          <TechnicalHeader label="SECTION 03" title="Get In Touch" />
-          
-          <p className="text-lg text-foreground mb-12 max-w-2xl mx-auto">
-            Interested in our team, collaborations, or just want to chat about robotics? 
-            We'd love to hear from you.
-          </p>
-
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="font-mono bg-blueprint hover:bg-blueprint-dark transition-all duration-300"
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              Email Us
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="font-mono border-2 border-blueprint text-blueprint hover:bg-blueprint hover:text-white transition-all duration-300"
-            >
-              <Instagram className="mr-2 h-5 w-5" />
-              Instagram
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="font-mono border-2 border-blueprint text-blueprint hover:bg-blueprint hover:text-white transition-all duration-300"
-            >
-              <Github className="mr-2 h-5 w-5" />
-              GitHub
-            </Button>
-          </div>
-        </div>
-
-        {/* Footer Gear */}
-        <div className="mt-20 flex justify-center opacity-20">
-          <GearIcon className="text-blueprint animate-gear" size={100} />
-        </div>
-      </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t-2 border-blueprint bg-background">
+      <footer className="py-8 px-6 border-t-2 border-team-blue bg-background">
         <div className="container mx-auto text-center">
           <p className="font-mono text-sm text-technical-gray">
-            © 2024 Wrench Dressing Diner | FTC Team 9415 | Engineering Excellence, Served Fresh
+            © 2024 Wrench Dressing Diner | FTC Team 9415
           </p>
         </div>
       </footer>

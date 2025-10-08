@@ -38,9 +38,11 @@ All colors MUST be HSL.
 
     --radius: 0.25rem;
 
-    /* Technical/Blueprint colors */
-    --blueprint: 217 91% 60%;
-    --blueprint-dark: 217 91% 40%;
+    /* Team colors */
+    --team-blue: 217 91% 60%;
+    --team-blue-dark: 217 91% 40%;
+    --team-yellow: 45 93% 58%;
+    --team-yellow-dark: 45 93% 38%;
     --grid-line: 214 32% 91%;
     --technical-gray: 210 11% 71%;
     --engineering-dark: 222 47% 11%;
@@ -75,8 +77,11 @@ All colors MUST be HSL.
     --input: 217 33% 18%;
     --ring: 217 91% 60%;
     
-    --blueprint: 217 91% 60%;
-    --blueprint-dark: 217 91% 40%;
+    /* Team colors for dark mode */
+    --team-blue: 217 91% 70%;
+    --team-blue-dark: 217 91% 50%;
+    --team-yellow: 45 93% 68%;
+    --team-yellow-dark: 45 93% 48%;
     --grid-line: 217 33% 18%;
     --technical-gray: 215 20% 65%;
     --engineering-dark: 210 40% 98%;
