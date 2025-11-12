@@ -1,0 +1,22 @@
+{
+  "um": {
+    "title": "Photo at the U of M",
+    "caption": "A group photo of us at the University of Minnesota."
+  },
+  "um-demo": {
+    "title": "UMN Demo",
+    "caption": "Showing our robot to little kids at the University of Minnesota to get them excited about STEM, just like our library demos."
+  },
+  "statefair": {
+    "title": "Minnesota State Fair",
+    "caption": "Each year, we bring our robots and Minions to the state fair, driving them around and sharing robotics with the public."
+  },
+  "library": {
+    "title": "Library Demo",
+    "caption": "We demoed our Minions and big robots for little kids to spark an interest in robotics."
+  },
+  "bestbuy": {
+    "title": "Besybuy Tech Talk",
+    "caption": "Teens present on technology topics to inspire the next generation."
+  }
+}
