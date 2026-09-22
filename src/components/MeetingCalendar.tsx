@@ -4,18 +4,31 @@ export const MeetingCalendar = () => {
   // Generate calendar days (yesterday, today, next 5 days)
   const today = new Date();
   const days = [];
-  
+
+  // Tuesdays and Thursdays 6-8 PM, Fridays 4:30-8 PM
+  const getMeetingInfo = (dayName: string) => {
+    if (dayName === "Tue" || dayName === "Thu") {
+      return { hasMeeting: true, meetingTime: "6:00 PM - 8:00 PM" };
+    }
+    if (dayName === "Fri") {
+      return { hasMeeting: true, meetingTime: "4:30 PM - 8:00 PM" };
+    }
+    return { hasMeeting: false, meetingTime: "" };
+  };
+
   for (let i = -1; i <= 5; i++) {
     const date = new Date(today);
     date.setDate(today.getDate() + i);
+    const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+    const meetingInfo = getMeetingInfo(dayName);
     days.push({
       date: date,
-      dayName: date.toLocaleDateString('en-US', { weekday: 'short' }),
+      dayName: dayName,
       dayNumber: date.getDate(),
       month: date.toLocaleDateString('en-US', { month: 'short' }),
       isToday: i === 0,
-      hasMeeting: i === 0 || i === 2 || i === 4, // Placeholder - will be API driven
-      meetingTime: "3:30 PM - 6:00 PM" // Placeholder
+      hasMeeting: meetingInfo.hasMeeting,
+      meetingTime: meetingInfo.meetingTime
     });
   }
 
@@ -24,7 +37,13 @@ export const MeetingCalendar = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="font-mono text-sm text-team-blue mb-2 tracking-wider">SECTION 03</h2>
-          <h3 className="text-4xl font-bold text-foreground">Meeting Schedule</h3>
+          <h3 className="text-4xl font-bold text-foreground mb-4">Meeting Schedule</h3>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            We meet on{" "}
+            <span className="font-mono text-team-blue font-bold">Tuesdays and Thursdays from 6-8 PM</span>{" "}
+            and{" "}
+            <span className="font-mono text-team-blue font-bold">Fridays from 4:30-8 PM</span>
+          </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">

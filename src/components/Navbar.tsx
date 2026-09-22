@@ -1,25 +1,23 @@
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
+  const goTo = (path: string) => {
+    navigate(path);
+    setIsOpen(false);
   };
 
   const navItems = [
-    { label: "About", id: "about" },
-    { label: "Accomplishments", id: "accomplishments" },
-    { label: "Meetings", id: "meetings" },
-    { label: "Competitions", id: "competitions" },
-    { label: "Outreach", id: "outreach" },
-    { label: "Sponsors", id: "sponsors" },
+    { label: "Home", path: "/" },
+    { label: "Michiana", path: "/michiana" },
+    { label: "About FTC", path: "/about-ftc" },
+    { label: "Join", path: "/join" },
   ];
 
   return (
@@ -28,7 +26,13 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo/Team Name */}
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => {
+              if (location.pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                navigate("/");
+              }
+            }}
             className="font-mono font-bold text-xl text-team-blue hover:text-team-yellow transition-colors"
           >
             WRENCH DRESSING
@@ -38,8 +42,8 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                key={item.path}
+                onClick={() => goTo(item.path)}
                 className="font-mono text-sm text-foreground hover:text-team-blue transition-colors"
               >
                 {item.label}
@@ -64,8 +68,8 @@ export const Navbar = () => {
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  key={item.path}
+                  onClick={() => goTo(item.path)}
                   className="font-mono text-sm text-foreground hover:text-team-blue transition-colors text-left"
                 >
                   {item.label}
