@@ -102,7 +102,7 @@ export const SponsorScroll = () => {
           href={sponsor.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center flex-shrink-0 h-full opacity-85 hover:opacity-100 transition-opacity"
+          className="flex items-center justify-center flex-shrink-0 h-full"
           style={{ width: `${sponsor.scrollWidth}px`, padding: `0 ${SLOT_PADDING}px` }}
         >
           <img
