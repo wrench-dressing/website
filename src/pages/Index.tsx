@@ -12,12 +12,19 @@ import { Wrench, Trophy, Users, Award, Star, Calendar, Target, Rocket } from "lu
 const Index = () => {
   const stats = [
     { number: "9415", label: "Team Number", icon: null },
-    { number: "11", label: "Years Experience", icon: Calendar },
-    { number: "29", label: "Official Events", icon: Target },
+    { number: "12", label: "Years Experience", icon: Calendar },
+    { number: "34", label: "Official Events", icon: Target },
     { number: "2014", label: "Rookie Year", icon: Rocket },
   ];
 
   const awards = [
+    { year: "2025", award: "Winning Alliance - Captain", event: "Minnesota FTC State Championship", icon: Trophy, color: "text-team-yellow" },
+    { year: "2025", award: "Galaxy Division Winning Alliance - Captain", event: "Minnesota FTC State Championship", icon: Trophy, color: "text-team-yellow" },
+    { year: "2025", award: "Control Award", event: "Minnesota FTC State Championship", icon: Award, color: "text-team-blue" },
+    { year: "2025", award: "Innovate Award", event: "MN FTC Otsego", icon: Award, color: "text-team-blue" },
+    { year: "2025", award: "Finalist Alliance - 1st Team Selected", event: "MN FTC Otsego", icon: Trophy, color: "text-team-blue" },
+    { year: "2025", award: "Think Award", event: "MN FTC Prior Lake", icon: Star, color: "text-team-blue" },
+    { year: "2025", award: "Winning Alliance - Captain", event: "MN FTC Prior Lake", icon: Trophy, color: "text-team-yellow" },
     { year: "2025", award: "Winning Alliance - Captain", event: "Southwest Minnesota Scrimmage", icon: Trophy, color: "text-team-yellow" },
     { year: "2024", award: "Inspire Award", event: "MN FTC Prior Lake", icon: Star, color: "text-team-blue" },
     { year: "2024", award: "Winning Alliance - Captain", event: "MN FTC Burnsville", icon: Trophy, color: "text-team-yellow" },
@@ -101,7 +108,7 @@ const Index = () => {
               <p className="text-lg text-foreground leading-relaxed">
                 9415 Wrench Dressing is currently one of two FTC teams at{" "}
                 <span className="font-mono text-team-blue font-bold">Chanhassen High School</span>. With{" "}
-                <span className="font-mono text-team-blue font-bold">11 years of experience</span>, we are
+                <span className="font-mono text-team-blue font-bold">12 years of experience</span>, we are
                 the most established team at CNHS.
               </p>
               <p className="text-lg text-foreground leading-relaxed">
